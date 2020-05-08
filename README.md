@@ -25,13 +25,13 @@ def load_model(file_name):
     location = os.path.join(dir_name + file_name)
     return joblib.load(location)
 
-# Read the CSV
+ # Read the CSV
 train_csv_path = '/kaggle/input/house-prices-advanced-regression-techniques/train.csv'
 test_csv_path = '/kaggle/input/house-prices-advanced-regression-techniques//test.csv'
 train_set = pd.read_csv(train_csv_path)
 test_set = pd.read_csv(test_csv_path)
 
-# Keep original data clean
+#  Keep original data clean
 train_data = train_set.copy()
 test_data = test_set.copy()
 test_data.columns
@@ -58,6 +58,7 @@ f, ax = plt.subplots(figsize=(22, 12))
 fig = sns.boxplot(x=var, y="SalePrice", data=data)
 fig.axis(ymin=0, ymax=800000);
 plt.xticks(rotation=90);
+
 
 corrs_matrix = train_data.corr()
 f, ax = plt.subplots(figsize=(12, 12))
